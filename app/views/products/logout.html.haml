@@ -1,0 +1,12 @@
+= render "header"
+%main.mypage-contents
+  .main-content
+    .logout
+      .logout-content
+        = link_to "#", method: :delete, class:"logout-home" do
+          ログアウト
+
+  = render "main"
+  = render "banner"
+  = render "footer"
+  = render "camera"  

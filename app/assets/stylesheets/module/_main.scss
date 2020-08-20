@@ -1,0 +1,58 @@
+.inside-chart{
+  width: 700px;
+  margin: 40px auto 0;
+  padding: 0 0 40px;
+
+  nav{
+    display: block;
+
+    .my-page-nav-list{
+      list-style: none;
+    
+      li{
+        border-top: 1px solid #eee;
+
+        .my-page-nav-list-item.active{
+          background: #eee;
+          font-weight: 600;
+        }
+        .my-page-nav-list-item{
+          position: relative;
+          display: block;
+          min-height: 48px;
+          padding: 16px;
+          background: #fff;
+          font-size: 14px;
+          color: #333;
+        }
+
+        a{
+          text-decoration: none;
+        }
+      }
+    }
+
+    .my-page-nav-head{
+      margin: 40px 0 0;
+      font-size: 16px;
+    }
+
+    .my-page-nav-list.active{
+      background: #eee;
+      font-weight: 600;
+    }
+
+    .my-page-nav-list{
+      margin: 8px 0 0;
+      background: #fff;
+    }
+
+    ul{
+      list-style: none;
+    }
+  }
+}
+
+main{
+display: block;
+}

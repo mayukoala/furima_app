@@ -32,62 +32,7 @@
           %li.my-page-item-nothing.bold 過去に取引した商品がありません。
         
     
-  .inside-chart
-    %nav.my-page-nav
-      %ul.my-page-nav-list
-        %li
-          = link_to("マイページ", "#", {class: "my-page-nav-list-item active"})
-        %li
-          = link_to("お知らせ", "#", {class: "my-page-nav-list-item"})
-        %li
-          = link_to("やることリスト", "#", {class: "my-page-nav-list-item"})
-        %li
-          = link_to("いいね！一覧", "#", {class: "my-page-nav-list-item"})
-        %li
-          = link_to("出品する", "#", {class: "my-page-nav-list-item"})
-        %li
-          = link_to("下書き一覧", "#", {class: "my-page-nav-list-item"})
-        %li
-          = link_to("出品した商品-出品中", "#", {class: "my-page-nav-list-item"})
-        %li
-          = link_to("マイページ", "#", {class: "my-page-nav-list-item"})
-        %li
-          = link_to("マイページ", "#", {class: "my-page-nav-list-item"})
-        %li
-          = link_to("購入した商品-取引中", "#", {class: "my-page-nav-list-item"})
-        %li
-          = link_to("購入した商品-過去の取引", "#", {class: "my-page-nav-list-item"})
-        %li
-          = link_to("ニュース一覧", "#", {class: "my-page-nav-list-item"})
-        %li
-          = link_to("評価一覧", "#", {class: "my-page-nav-list-item"})
-        %li
-          = link_to("ガイド", "#", {class: "my-page-nav-list-item"})
-        %li
-          = link_to("お問い合わせ", "#", {class: "my-page-nav-list-item"})
-      %h3.my-page-nav-head フリマペイ
-      %ul.my-page-nav-list
-        %li
-          = link_to("売上・振込申請", "#", {class: "my-page-nav-list-item"})
-        %li
-          = link_to("ポイント", "#", {class: "my-page-nav-list-item"})
-      %h3.my-page-nav-head 設定
-      %ul.my-page-nav-list
-        %li
-          = link_to("プロフィール", "#", {class: "my-page-nav-list-item"})
-        %li
-          = link_to("発送元・お届け先住所変更", "#", {class: "my-page-nav-list-item"})
-        %li
-          = link_to("支払い方法", "#", {class: "my-page-nav-list-item"})
-        %li
-          = link_to("メール/パスワード", "#", {class: "my-page-nav-list-item"})
-        %li
-          = link_to("本人情報", "#", {class: "my-page-nav-list-item"})
-        %li
-          = link_to("電話番号の確認", "#", {class: "my-page-nav-list-item"})
-        %li
-          = link_to("ログアウト", "#", {class: "my-page-nav-list-item"})
-
+= render "main"
 = render "banner"
 = render "footer"
 = render "camera"
