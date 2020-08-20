@@ -1,0 +1,93 @@
+%body
+  =render "header"
+
+%main.main
+  .main__inside
+    %section.my-page-user-icon
+      = link_to "#" do
+        %figure
+          = image_tag "member_photo_noimage_thumb.png"
+        %h2.user-name ユーザーネーム
+        .number
+          .number__left
+            評価
+            %span.bold 0
+          .number__right
+            出品数
+            %span.bold 0
+    %section.my-page-bought
+      %h2.my-page-bought__top
+        購入した商品
+      %ul.my-page-bought__tabs
+        %li.active
+          %h3
+            = link_to "取引中", "#"
+        %li
+          %h3
+            = link_to "過去の取引", "#"
+      .contents
+        %ul#mypage-tab-now.my-page-item-list.tab-panel.active
+          %li.my-page-item-nothing.bold 取引中の商品はありません。
+        %ul#mypage-tab-old.my-page-item-list.tab-panel
+          %li.my-page-item-nothing.bold 過去に取引した商品がありません。
+        
+    
+  .inside-chart
+    %nav.my-page-nav
+      %ul.my-page-nav-list
+        %li
+          = link_to("マイページ", "#", {class: "my-page-nav-list-item active"})
+        %li
+          = link_to("お知らせ", "#", {class: "my-page-nav-list-item"})
+        %li
+          = link_to("やることリスト", "#", {class: "my-page-nav-list-item"})
+        %li
+          = link_to("いいね！一覧", "#", {class: "my-page-nav-list-item"})
+        %li
+          = link_to("出品する", "#", {class: "my-page-nav-list-item"})
+        %li
+          = link_to("下書き一覧", "#", {class: "my-page-nav-list-item"})
+        %li
+          = link_to("出品した商品-出品中", "#", {class: "my-page-nav-list-item"})
+        %li
+          = link_to("マイページ", "#", {class: "my-page-nav-list-item"})
+        %li
+          = link_to("マイページ", "#", {class: "my-page-nav-list-item"})
+        %li
+          = link_to("購入した商品-取引中", "#", {class: "my-page-nav-list-item"})
+        %li
+          = link_to("購入した商品-過去の取引", "#", {class: "my-page-nav-list-item"})
+        %li
+          = link_to("ニュース一覧", "#", {class: "my-page-nav-list-item"})
+        %li
+          = link_to("評価一覧", "#", {class: "my-page-nav-list-item"})
+        %li
+          = link_to("ガイド", "#", {class: "my-page-nav-list-item"})
+        %li
+          = link_to("お問い合わせ", "#", {class: "my-page-nav-list-item"})
+      %h3.my-page-nav-head フリマペイ
+      %ul.my-page-nav-list
+        %li
+          = link_to("売上・振込申請", "#", {class: "my-page-nav-list-item"})
+        %li
+          = link_to("ポイント", "#", {class: "my-page-nav-list-item"})
+      %h3.my-page-nav-head 設定
+      %ul.my-page-nav-list
+        %li
+          = link_to("プロフィール", "#", {class: "my-page-nav-list-item"})
+        %li
+          = link_to("発送元・お届け先住所変更", "#", {class: "my-page-nav-list-item"})
+        %li
+          = link_to("支払い方法", "#", {class: "my-page-nav-list-item"})
+        %li
+          = link_to("メール/パスワード", "#", {class: "my-page-nav-list-item"})
+        %li
+          = link_to("本人情報", "#", {class: "my-page-nav-list-item"})
+        %li
+          = link_to("電話番号の確認", "#", {class: "my-page-nav-list-item"})
+        %li
+          = link_to("ログアウト", "#", {class: "my-page-nav-list-item"})
+
+= render "banner"
+= render "footer"
+= render "camera"
