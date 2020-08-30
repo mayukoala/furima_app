@@ -3,8 +3,10 @@
   .main-content
     .logout
       .logout-content
-        = link_to "#", method: :delete, class:"logout-home" do
-          ログアウト
+        = link_to "destroy__user_session_path", method: :delete, class:"logout-home" do
+          .inside
+            %button#logout_btn{type: "button"}
+              ログアウト
 
   = render "main"
   = render "banner"
