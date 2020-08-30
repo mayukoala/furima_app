@@ -127,7 +127,7 @@ a {
 }
 
 .a_blue{
-  color: #0095ee;
+  color: #3CCACE;
 }
 
 .image_upload{
@@ -193,7 +193,7 @@ a {
     border: none;
     border-radius: 4px;
     &.listing{
-      background-color: red;
+      background-color: #3CCACE;
       color: white;
     }
     &.draft{
@@ -203,14 +203,14 @@ a {
   .text_link {
     text-align: center;
     a {
-      color: #0095ee;
+      color: #3CCACE;
     }
   }
 
 .attention {
   font-size: 12px;
   a {
-    color: #0095ee;
+    color: #3CCACE;
     font-size: inherit;
   }
   span {

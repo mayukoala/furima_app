@@ -35,7 +35,7 @@
 - belongs_to :user
 - belongs_to :category
 - belongs_to :brand
-- has_one :shipping
+- belongs_to :shipping
 - has_one :order
 - has_many :product_images
 
@@ -94,8 +94,7 @@
 |------|----|-------|
 |area|string|null: false|
 |fee|integer|null: false|
-|type|string|null: false|
+|shipping_type|string|null: false|
 |handling_time|integer|null: false|
-|product_id|references|null: false, foreign_key: true|
 ### Association
-- belongs_to :product
+- has_one :product

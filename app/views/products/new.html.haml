@@ -1,9 +1,9 @@
 .wrapper
   .product_header
     =link_to image_tag("logo.png", class:'header_logo'), root_path
-  .listing_forms  
+  .listing_forms
+  = form_with(model: @product, local: true) do |form|
     .from_section.section_line
-      %form
       .labels.mb_15
         %p.label
           商品画像
@@ -17,7 +17,7 @@
             =icon('fas', 'camera fa-2x')
             %input{type: "file", class:"file"}
             %p.text
-              ドラックアンドドロップ
+              ドラッグアンドドロップ
               %br
               またはクリックしてファイルをアップロード    
     .from_section.section_line
@@ -39,12 +39,13 @@
     .from_section.section_line
       .label--gray.mb_30
         商品の詳細
-      .labels.mb_15
-        %p.label
-          カテゴリー
-        %p.label__required
-          必須  
-      = select_tag 'note[point]', options_for_select(["選択してください", "レディース", "メンズ", "ベビー・キッズ", "住まい・インテリア", "おもちゃ・ホビー"]), class:'selectbox_style mb_30'
+      .append__category
+        .labels.mb_15
+          %p.label
+            カテゴリー
+          %p.label__required
+            必須  
+        = form.collection_select :category_id, @category_parent, :id, :name, {include_blank: '---'}, {id: 'parent__category', class:'selectbox_style mb_30'}
       .labels.mb_15
         %p.label
           ブランド
@@ -143,5 +144,4 @@
     .footer_logo.mt_30
       =link_to image_tag("logo-white.png", class:'footer_logo'), root_path
     .footer_copyright
-      © Furima, Inc.
-
+      © FURIMA, Inc.

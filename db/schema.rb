@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_18_184010) do
+ActiveRecord::Schema.define(version: 2020_08_18_184011) do
 
   create_table "brands", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -32,12 +32,14 @@ ActiveRecord::Schema.define(version: 2020_08_18_184010) do
     t.integer "price", null: false
     t.integer "trading_status", null: false
     t.datetime "completed_at"
+    t.bigint "category_id", null: false
     t.bigint "shipping_id", null: false
     t.bigint "brand_id"
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["brand_id"], name: "index_products_on_brand_id"
+    t.index ["category_id"], name: "index_products_on_category_id"
     t.index ["shipping_id"], name: "index_products_on_shipping_id"
     t.index ["user_id"], name: "index_products_on_user_id"
   end
@@ -51,18 +53,24 @@ ActiveRecord::Schema.define(version: 2020_08_18_184010) do
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "nickname", null: false
+    t.string "family_name", null: false
+    t.string "first_name", null: false
+    t.string "family_name_kana", null: false
+    t.string "first_name_kana", null: false
+    t.string "birth", null: false
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
+    t.string "password_confirmation", default: "", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "products", "brands"
+  add_foreign_key "products", "categories"
   add_foreign_key "products", "shippings"
   add_foreign_key "products", "users"
 end

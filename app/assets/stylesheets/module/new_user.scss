@@ -1,0 +1,169 @@
+
+
+
+
+.header_logo {
+  margin: auto;
+  text-align: center;
+  padding-top: 50px;
+  
+}
+
+
+.header_text1 {
+
+  font-size: 40px;
+  color: #3CCACE;
+  font-family: monospace;
+  text-align: center;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.label-must {
+  width: 40px;
+  background-color: red;
+  padding: 4px 8px;
+  border-radius: 2px;
+  color: #fff;
+  font-size: 12px;
+  margin: auto;
+  margin-bottom: 20px;
+  margin-top: 30px;
+}
+
+.field-all {
+
+font-size: 20px;
+font-family: monospace;
+background-color:#EEE;
+text-align: center;
+width: 700px;
+padding: 30px;
+margin-bottom: 200px;
+margin: auto;
+margin-bottom: 200px;
+}
+
+.field-nick {
+
+  width: 500px;
+  margin: auto;
+  font-size: 20px;
+  font-family: monospace;
+  background-color:#EEE;
+  text-align: center;
+  padding: 20px;
+  
+}
+
+.field-name {
+
+  width: 600px;
+  font-size: 20px;
+  font-family: monospace;
+  background-color:#EEE;
+  text-align: center;
+  padding: 30px;
+  margin: auto;
+
+}
+
+.field-kana {
+
+  font-size: 20px;
+  font-family: monospace;
+  background-color:#EEE;
+  text-align: center;
+  width: 550px;
+  padding: 30px;
+  margin: auto;
+}
+
+.field-email {
+
+  font-size: 20px;
+  font-family: monospace;
+  background-color:#EEE;
+  text-align: center;
+  width: 500px;
+  padding: 30px;
+  margin: auto;
+}
+
+.field-birth {
+
+  font-size: 20px;
+  font-family: monospace;
+  background-color:#EEE;
+  text-align: center;
+  width: 500px;
+  padding: 30px;
+  margin: auto;
+}
+
+.field-password {
+
+  font-size: 20px;
+  font-family: monospace;
+  background-color:#EEE;
+  text-align: center;
+  width: 500px;
+  padding: 30px;
+  margin: auto;
+}
+
+.field-pass2 {
+
+  font-size: 20px;
+  font-family: monospace;
+  background-color:#EEE;
+  text-align: center;
+  width: 500px;
+  padding: 30px;
+  margin: auto;
+  margin-bottom: 200px;
+}
+
+
+.button-regi { 
+  font-family: monospace;
+  display: inline-block;
+  border-radius: 5%;
+  font-size: 22pt;
+  text-align: center;
+  cursor: pointer;
+  padding: 13px 100px;
+  background: #ff0000;
+  color: #ffffff;
+  line-height: 1em; 
+  transition: .3s;
+  border: 2px solid #ff0000;
+  margin-bottom: 100px;
+
+ 
+}
+
+
+.footer1 {
+  background-color: #272727;
+  a {
+  text-decoration: none;
+  color: white;
+  margin: 5px;
+  }
+  
+  &__info {
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    padding-top: 30px;
+  }
+
+  &__logo {
+    text-align: center;
+    font-size: 15px;
+    color: white;
+    padding-top: 30px;
+  }
+}

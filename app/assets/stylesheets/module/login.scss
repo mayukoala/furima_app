@@ -4,99 +4,121 @@
 
 a {
   text-decoration: none;
-  color: white;
+  // color: white;
   // margin: 5px;
 }
 
 
-.header {
 
-  height: 300px;
+.header1 {
+  height: 100px;
+  margin: auto;
+  text-align: center;
+  margin-top: 100px;
+  margin-bottom: 100px;
+
+}
+
+.login-form__text {
+  color: #3CCACE;
+  font-size: 40px;
+  font-family: monospace;
+  padding-top: 70px;
+  padding-bottom: 50px;;
+  text-align: center;
+  border-bottom: 1px solid white;
+
+}
+
+.field-sessions {
+
+  font-size: 15px;
+  font-family: monospace;
+  background-color:#EEE;
+  text-align: center;
+  width: 600px;
+  padding: 30px;
+  margin: auto;
+  margin-bottom: 200px;
+
+}
+  
+  .field-mail {
+  
+    font-size: 20px;
+    font-family: monospace;
+    background-color:#EEE;
+    text-align: center;
+    width: 500px;
+    padding: 30px;
+    margin: auto;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    
+  }
+  
+  .field-pass {
+
+    font-size: 20px;
+    font-family: monospace;
+    background-color:#EEE;
+    text-align: center;
+    width: 500px;
+    padding: 30px;
+    margin: auto;
+    margin-bottom: 200px;
+  }
+
+
+
+  .btn-log {
+
+    font-family: monospace;
+    display: inline-block;
+    border-radius: 5%;
+    font-size: 22pt;
+    text-align: center;
+    cursor: pointer;
+    padding: 13px 100px;
+    background: #ff0000;
+    color: #ffffff;
+    line-height: 1em; 
+    transition: .3s;
+    border: 2px solid #ff0000;
+    margin-bottom: 100px;
+
+  }
+  .pass-forgot {
+  a {
+    color:  #3CCACE;
+
+  }
+  }
+
+
+
+.footer2 {
+  background-color: #272727;
+  height: 200px;
+
+  a {
+    text-decoration: none;
+    color: white;
+    margin: 5px;
+  }
+  
+  &__info {
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    padding-top: 30px;
+  }
 
   &__logo {
-    padding-top: 150px;
     text-align: center;
-  }
-
-
-}
-
-.login-form {
-
-  height: 100%;
-  background-color: #EEE;
-  margin-top: 100px;
-  margin-left: 300px;
-  margin-right: 300px;
-  margin-bottom: 200px;
-  padding-bottom: 200px;
-  
-
-  &__text {
-    color: lightseagreen;
-    font-size: 40px;
-    font-family: monospace;
-    padding-top: 70px;
-    padding-bottom: 50px;;
-    text-align: center;
-    border-bottom: 1px solid white;
-    margin: auto;
-  }
-
-  &__mail {
-    font-family: monospace;
-    font-size: 25px;
-    text-align: center;
-    margin-top: 150px;
-  }
-
-  &__password {
-    font-family: monospace;
-    font-size: 25px;
-    text-align: center;
-    margin-top: 150px;
-    margin-bottom: 150px;
-    
-  }
-
-  &__submit {
-    font-family: monospace;
-    background-color: #ea352d;
-    border: 1px solid #ea352d;
-    color: #fff;
-    margin-top: 150px;
-    margin-left: 150px;
-    margin: auto;
-    display: block;
-    width: 350px;
-    line-height: 50px;
     font-size: 15px;
-    border-radius: 5px;
-    border: 1px solid transparent;
-    -webkit-transition: all ease-out .5s;
-    transition: all ease-out .5s;
-    cursor: pointer;
-    text-align: center;
+    color: white;
+    padding-top: 30px;
   }
 
 }
-
-
-  .footer {
-
-    background-color: #272727;
-    height: 200px;
-    
-    &__info {
-      text-align: center;
-      color: white;
-      padding-top: 30px;
-    }
-  
-    &__logo {
-      text-align: center;
-      font-size: 15px;
-      color: white;
-      padding-top: 30px;
-    }
-  }
