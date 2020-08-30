@@ -78,4 +78,5 @@ gem 'haml-rails'
 gem 'font-awesome-sass'
 gem 'rails-i18n'
 gem 'jquery-rails'
+gem 'payjp'
 
