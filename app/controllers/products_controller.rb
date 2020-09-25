@@ -26,7 +26,7 @@ class ProductsController < ApplicationController
 
   def edit
     @product = Product.find(params[:id])
-
+    @parents = Category.where(ancestry: nil)
 
   end
 
@@ -35,6 +35,7 @@ class ProductsController < ApplicationController
     if @product.update(product_params)
       redirect_to show_product_path, notice: '更新しました'
     else
+      @parents = Category.where(ancestry: nil)
       render :edit
     end
   end

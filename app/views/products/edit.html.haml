@@ -1,23 +1,141 @@
-.new__page__header
-  = link_to image_tag("logo/logo.png", alt: "logo"), root_path
-= form_for @product do |f|
-  = render 'layouts/notifications', model: f.object
-  .name__field#1
-    .form__label
-      .lavel__name
-        出品画像
-      .lavel__Required
-        [必須]
-  #image-box-1{class:"#{@product.product_images[0].image_url}"}
-    - @product_images.each do |img|
-      .item-image{id:img.id}
-        = image_tag(img.image.url,{width:"188",height:"180"})
-        .item-image__operetion
-          .item-image__operetion--edit__delete__hidden 削除
-    %label.img-label{for: "img-file"}
-      #image-box__container{class:"item-num-#{@images.length}"}
-        #append-js-edit
-          = f.fields_for :images do |image|
-            .js-file_group{"data-index" => "#{image.index}"}
-              = image.file_field :image, type: 'file', value:"#{image.object.id}",style: "",  id:"img-file", class:'js-file-edit',name: "item[images_attributes][#{@item.images.count}][image]", data:{index:""}
-        %i.fas.fa-camera
+.wrapper
+  = render "share/products_header"
+  .listing_forms 
+    = form_with(model: @product, local: true) do |f| 
+      - if @product.errors.any?
+        .from_section.section_line
+          %ul
+            - @product.errors.full_messages.each do |msg|
+              %li.font_red
+                = msg
+      .from_section.section_line
+        .labels.mb_15
+          %p.label
+            商品画像
+          %p.label__required
+            必須
+        %p
+          最大10枚までアップロードできます 
+          = f.fields_for :product_images do |i| 
+            .image_upload
+              = i.label :image_url, class: 'image_upload__btn' do
+                .btn_contents
+                  =icon('fas', 'camera fa-2x')
+                  = i.file_field :image_url, class:'file'
+                  %p.text
+                    ドラックアンドドロップ
+                    %br
+                    またはクリックしてファイルをアップロード   
+      .from_section.section_line
+        .labels.mb_15
+          %p.label
+            商品名
+          %p.label__required
+            必須
+        = f.text_field :name, class: "input_style input_size_45 mb_30", placeholder:"40字まで"
+        .labels.mb_15
+          %p.label
+            商品の説明
+          %p.label__required
+            必須
+        = f.text_area :text, class: "input_style input_size_150 mb_30", placeholder: description_input_placeholder
+        .text_counter
+          %p
+            0/1000
+      .from_section.section_line
+        .label--gray.mb_30
+          商品の詳細
+        .append__category
+          .labels.mb_15
+            %p.label
+              カテゴリー
+            %p.label__required
+              必須  
+          //= f.collection_select :category_id, @category_parent, :id, :name, {include_blank: '---'}, {id: 'parent__category', class:'selectbox_style mb_30'}
+        .labels.mb_15
+          %p.label
+            ブランド
+          %p.label__optional
+            任意
+        = f.fields_for :brand do |b|
+          = b.text_field :name, class: "input_style input_size_45 mb_30", placeholder:"例）シャネル"
+        .labels.mb_15
+          %p.label
+            商品の状態
+          %p.label__required
+            必須  
+        = f.select :condition, [["新品・未使用", "1"], ["未使用に近い", "2"], ["目立った傷や汚れなし","3"], ["やや傷や汚れあり", "4"], ["傷や汚れあり", "5"]]
+      .from_section.section_line
+        = f.fields_for :shipping do |s|
+          .label--gray.mb_30
+            配送について
+          .labels.mb_15
+            %p.label
+              配送料の負担
+            %p.label__required
+              必須
+          = s.select :fee, [["送料込み（出品者負担）", "0"], ["着払い（購入者負担）", "1"]]
+          .labels.mb_15
+            %p.label
+              発送元の地域
+            %p.label__required
+              必須  
+          = s.select :area, [["北海道", "hokkaido"], ["青森", "aomori"], ["岩手","iwate"]]
+          .labels.mb_15
+            %p.label
+              発送までの日数
+            %p.label__required
+              必須  
+          = s.select :handing_time, [["1〜2日で発送", "0"], ["2〜3日で発送", "1"], ["4〜7日で発送","2"]]
+          .labels.mb_15
+            %p.label
+              配送方法
+            %p.label__required
+              必須  
+          = s.select :shipping_type, [["らくらくフリマ便", "0"], ["ゆうゆうフリマ便", "1"], ["未定","2"]]
+      .from_section
+        .label--gray.mb_30
+          価格（¥300〜9,999,999）
+        .input_price.mb_30
+          .labels
+            %p.label
+              販売価格
+            %p.label__required
+              必須  
+          .input_box
+            %p.mr_5
+              ¥
+            = f.text_field :price, class: "input_style input_size_45", placeholder:"0"
+        .calculation_box.mb_30
+          %p
+            販売手数料（10%）
+          %p
+            ¥50
+        %hr.mb_30   
+        .calculation_box
+          %p
+            販売利益
+          %p
+            ￥450
+      .from_section
+        .buttons.mb_30
+          = f.submit value: "編集を保存する", class: "btn listing mb_15"
+        -#   = f.submit value: "下書きに保存", class: "btn draft"
+        -# .text_link.mb_30
+        -#   = link_to root_path do
+        -#     もどる
+     
+        .attention.mb_30
+          禁止されている
+          %span>= link_to "行為", "#"
+          および
+          %span>= link_to "出品物", "#"
+          を必ずご確認ください。
+          %span>= link_to "偽ブランド品", "#"
+          や
+          %span>= link_to "盗品物", "#"
+          などの販売は犯罪であり、法律により処罰される可能性があります。 また、出品をもちまして
+          %span>= link_to "加盟店規約", "#"
+          に同意したことになります。
+    = render "share/products_footer"
+

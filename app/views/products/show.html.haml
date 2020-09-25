@@ -20,12 +20,12 @@
             %tr 
               %th カテゴリー
               %td
-                -# %p
-                -# = link_to "#{@product.category.parent.parent.name}","#"
-                -# %p
-                -# = link_to "＞#{@product.category.parent.name}","#"
-                -# %p
-                -# = link_to "＞#{@product.category.name}","#"         
+                %p
+                = link_to "#{@product.category.parent.parent.name}","#"
+                 %p
+                 = link_to "＞#{@product.category.parent.name}","#"
+                 %p
+                 = link_to "＞#{@product.category.name}","#"         
           %table
             %tr
               %th ブランド
