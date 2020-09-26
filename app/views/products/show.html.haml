@@ -20,13 +20,16 @@
             %tr 
               %th カテゴリー
               %td
-                         
-          %table
+                %p
+                = link_to "#{@product.category.parent.name}","#"
+                %p
+                = link_to "＞#{@product.category.parent.name}","#"
+                %p
+                = link_to "＞#{@product.category.name}","#"         
             %tr
               %th ブランド
               %td
                 = @product.brand.name   
-          %table
             %tr
               %th 商品の状態
               %td 
@@ -40,7 +43,6 @@
                   %p やや傷や汚れあり
                 - if @product.condition == 5
                   %p 傷や汚れあり
-          %table
             %tr
               %th 配送方法
               %td
@@ -50,7 +52,6 @@
                   %p ゆうゆうフリマ便                  
                 - if @product.shipping.shipping_type == 2
                   %p 未定 
-          %table
             %tr
               %th 発送料の負担
               %td
@@ -58,17 +59,10 @@
                   %p 送料込み（出品者負担）
                 - if @product.shipping.fee == 1
                   %p 着払い（購入者負担）
-          %table
             %tr
               %th 発送元地域
               %td
-                - if @product.shipping.area == "hokkaido" 
-                  %p 北海道
-                - if @product.shipping.area == "aomori"
-                  %p 青森
-                - if @product.shipping.area == "iwate"
-                  %p 岩手
-          %table
+                = @product.shipping.area 
             %tr
               %th 発送日数
               %td
