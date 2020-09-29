@@ -1,5 +1,10 @@
 $(function()  {
   $(document).on("click", ".image_upload", function () {
+    $ul = $("#previews");
+    $li = $(this).parents("li");
+    $label = $(this).parents(".upload-label");
+    $inputs = $ul.find(".image_upload");
+
     //$liに追加するためのプレビュー画面のHTML
     var preview = $(
       `<div class="image-preview__wapper"><img class="preview"></div><div class="image-preview_btn"><div class="image-preview_btn_delete">削除</div></div>`
@@ -10,18 +15,13 @@ $(function()  {
       <label class="upload-label">
       <div class="btn_contents">
       <i class="fas fa-camera fa-2x"></i>
+      </div>
       <div class="input-area">
       <input class="hidden image_upload" type="file">
       </div>
-      </div>
-      </div>
-      </label>
-      </li>`
+      </label></li>`
     );
-    $ul = $("#previews");
-    $li = $(this).parents("li");
-    $label = $(this).parents(".upload-label");
-    $inputs = $ul.find(".image_upload");
+
     //inputに画像を読み込んだら、"プレビューの追加"と"新しいli追加"処理が動く
     $(".image_upload").on("change", function (e) {
       //inputで選択した画像を読み込む
@@ -73,8 +73,8 @@ $(function()  {
         //nameの番号を更新するために、現在の番号を除去
         $(input).removeAttr("name");
         $(input).attr({
-          name: "product[images_attributes][" + num + "][name]",
-          id: "product_images_attributes_" + num + "_name",
+          name: "product[product_images_attributes][" + num + "][image_url]",
+          id: "product_product_images_attributes_" + num + "_image_url",
         });
       });
     });
