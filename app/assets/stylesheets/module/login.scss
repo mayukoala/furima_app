@@ -1,24 +1,18 @@
 * {
   box-sizing: border-box;
 }
-
 a {
   text-decoration: none;
   // color: white;
   // margin: 5px;
 }
-
-
-
-.header1 {
+.header-login {
   height: 100px;
   margin: auto;
   text-align: center;
-  margin-top: 100px;
+  padding-top: 100px;
   margin-bottom: 100px;
-
 }
-
 .login-form__text {
   color: #3CCACE;
   font-size: 40px;
@@ -27,11 +21,8 @@ a {
   padding-bottom: 50px;;
   text-align: center;
   border-bottom: 1px solid white;
-
 }
-
 .field-sessions {
-
   font-size: 15px;
   font-family: monospace;
   background-color:#EEE;
@@ -40,11 +31,8 @@ a {
   padding: 30px;
   margin: auto;
   margin-bottom: 200px;
-
 }
-  
   .field-mail {
-  
     font-size: 20px;
     font-family: monospace;
     background-color:#EEE;
@@ -54,11 +42,8 @@ a {
     margin: auto;
     margin-top: 100px;
     margin-bottom: 100px;
-    
   }
-  
   .field-pass {
-
     font-size: 20px;
     font-family: monospace;
     background-color:#EEE;
@@ -68,11 +53,7 @@ a {
     margin: auto;
     margin-bottom: 200px;
   }
-
-
-
   .btn-log {
-
     font-family: monospace;
     display: inline-block;
     border-radius: 5%;
@@ -80,45 +61,36 @@ a {
     text-align: center;
     cursor: pointer;
     padding: 13px 100px;
-    background: #ff0000;
+    background: #3CCACE;
     color: #ffffff;
     line-height: 1em; 
     transition: .3s;
-    border: 2px solid #ff0000;
+    border: 2px solid #3CCACE;
     margin-bottom: 100px;
-
   }
   .pass-forgot {
   a {
     color:  #3CCACE;
-
   }
   }
-
-
-
 .footer2 {
   background-color: #272727;
   height: 200px;
-
   a {
     text-decoration: none;
     color: white;
     margin: 5px;
   }
-  
   &__info {
     text-align: center;
     text-decoration: none;
     color: white;
     padding-top: 30px;
   }
-
   &__logo {
     text-align: center;
     font-size: 15px;
     color: white;
     padding-top: 30px;
   }
-
 }
