@@ -7,7 +7,12 @@ $(function()  {
 
     //$liに追加するためのプレビュー画面のHTML
     var preview = $(
-      `<div class="image-preview__wapper"><img class="preview"></div><div class="image-preview_btn"><div class="image-preview_btn_delete">削除</div></div>`
+      `<div class="image-preview__wapper">
+      <img class="preview">
+      <div class="image-preview_btn">
+      <div class="image-preview_btn_delete">削除</div>
+      </div>
+      </div>`
     );
     //次の画像を読み込むためのinput。処理の最後にappendで追加する。
     var append_input = $(
@@ -15,6 +20,9 @@ $(function()  {
       <label class="upload-label">
       <div class="btn_contents">
       <i class="fas fa-camera fa-2x"></i>
+      <div class="upload-label__text">
+      クリックしてファイルをアップロード
+      </div>
       </div>
       <div class="input-area">
       <input class="hidden image_upload" type="file">
@@ -43,30 +51,44 @@ $(function()  {
       $label.css("display", "none");
       $li.removeClass("input");
       $li.addClass("image-preview");
-      $lis = $ul.find(".image-preview");
-
+      $lis = $ul.find('.image-preview');
+    
       $("#previews li").css({
-        width: `114px`,
+        width: `120px`,
       });
       //"ul"に新しい"li(inputボタン)"を追加させる。
-      if ($lis.length <= 4) {
-        $ul.append(append_input);
-        $("#previews li:last-child").css({
-          width: `calc(100% - (120px * ${$lis.length}))`,
-        });
-      } else if ($lis.length == 5) {
-        $li.addClass("image-preview");
-        $ul.append(append_input);
-        $("#previews li:last-child").css({
-          width: `100%`,
-        });
-      } else if ($lis.length <= 9) {
-        $li.addClass("image-preview");
-        $ul.append(append_input);
-        $("#previews li:last-child").css({
-          width: `calc(100% - (20% * (${$lis.length} - 5 )))`,
-        });
+      
+      if ($lis.length <= 3 ){
+        $ul.append(append_input)
+        $('#previews li:last-child').css({
+          'width': `calc(100% - (120px * ${$lis.length}))`
+        })
       }
+      else if( $lis.length == 4 ){
+        $ul.append(append_input)
+        $('#previews li:last-child').css({
+          'width': `calc(100% - (120px * ${$lis.length}))`
+        })
+        $('.btn_contents').css('padding','25px')
+      }
+
+      else if( $lis.length == 5 ){
+        $li.addClass('image-preview');
+        $ul.append(append_input)
+        $('#previews li:last-child').css({
+          'width': `100%`
+        })
+      }
+      // ９個のプレビューのとき、1個のinputを追加。最後の数は9です。
+      else if($lis.length <= 9 ){
+        $li.addClass('image-preview');
+        $ul.append(append_input)
+        $('#previews li:last-child').css({
+          'width': `calc(100% - (120px * (${$lis.length} - 5 )))`
+        })
+        $('.btn_contents').css('padding','25px')
+      }
+
 
       //inputの最後の"data-image"を取得して、input nameの番号を更新させてる。
       $inputs.each(function (num, input) {
@@ -82,7 +104,18 @@ $(function()  {
 
     //削除ボタンをクリックしたとき、処理が動く。
   $(document).on('click','.image-preview_btn_delete',function(){
-    var append_input = $(`<li class="input"><label class="upload-label"><div class="upload-label__text">ドラッグアンドドロップ<br>またはクリックしてファイルをアップロード<div class="input-area"><input class="hidden image_upload" type="file"></div></div></label></li>`)
+    var append_input = $(`<li class="input">
+    <label class="upload-label">
+    <div class="btn_contents">
+    <i class="fas fa-camera fa-2x"></i>
+    <div class="upload-label__text">
+    クリックしてファイルをアップロード
+    </div>
+    </div>
+    <div class="input-area">
+    <input class="hidden image_upload" type="file">
+    </div>
+    </label></li>`)
     $ul = $('#previews')
     $lis = $ul.find('.image-preview');
     $input = $ul.find('.input');
@@ -97,12 +130,20 @@ $(function()  {
     // まずはプレビューの数を数える。
     $lis = $ul.find('.image-preview');
     $label = $ul.find('.input');
-    if($lis.length <= 4 ){
+    if($lis.length <= 3 ){
       // inputのサイズを変更
       $('#previews li:last-child').css({
-        'width': `calc(100% - (20% * ${$lis.length}))`
+        'width': `calc(100% - (120px * ${$lis.length}))`
       })
     }
+    else if($lis.length == 4 ){
+      // inputのサイズを変更
+      $('#previews li:last-child').css({
+        'width': `calc(100% - (120px * ${$lis.length}))`
+      })
+      $('.btn_contents').css('padding','25px')
+    }
+
     else if($lis.length == 5 ){
       // inputのサイズを変更
       $('#previews li:last-child').css({
@@ -112,14 +153,15 @@ $(function()  {
     else if($lis.length < 9 ){
       // inputのサイズを変更
       $('#previews li:last-child').css({
-        'width': `calc(100% - (20% * (${$lis.length} - 5 )))`
+        'width': `calc(100% - (120px * (${$lis.length} - 5 )))`
       })
     }
     else if($lis.length == 9 ){
       $ul.append(append_input) // 9個の時だけ、新しいinputを追加してやる
       $('#previews li:last-child').css({
-        'width': `calc(100% - (20% * (${$lis.length} - 5 )))`
+        'width': `calc(100% - (120px * (${$lis.length} - 5 )))`
       })
+      $('.btn_contents').css('padding','25px')
     }
   });
 
