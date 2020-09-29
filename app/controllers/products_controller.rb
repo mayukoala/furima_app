@@ -1,4 +1,7 @@
 class ProductsController < ApplicationController
+  before_action :get_product, only: [:show, :destroy]
+
+
   def index
     @parents = Category.where(ancestry: nil)
   end
@@ -13,7 +16,6 @@ class ProductsController < ApplicationController
   end
 
   def show
-    @product = Product.find(params[:id])
     @user = @product.user
     @category_id = @product.category_id
     @category_parent = Category.find(@category_id)
@@ -47,11 +49,23 @@ class ProductsController < ApplicationController
       render :new
     end 
   end
+
+  def destroy
+    if @product.destroy
+      redirect_to root_path
+    else
+      render :show
+    end
+  end
   
   private
     def product_params
       params.require(:product).permit(:name, :text, :condition, :price, :trading_status, :category_id, product_images_attributes: [:image_url, :product_id],
       shipping_attributes: [:area, :fee, :handing_time, :shipping_type],
       brand_attributes: [:name]).merge(user_id: current_user.id)
+    end
+
+    def get_product
+      @product = Product.find(params[:id])
     end
   end
