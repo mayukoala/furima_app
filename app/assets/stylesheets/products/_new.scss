@@ -141,7 +141,7 @@ a {
   }
 
 .label__required{
-    background-color: red;
+    background-color:#ce3c3c;
     border-radius: 2px;
     color: white;
     font-size: 12px;
@@ -179,35 +179,50 @@ a {
 .font_red{
   color: red;
 }
-
-.image_upload{
-  display: flex;
-  justify-content: center;
-  margin-top: 15px;
-  &__btn{
+  .input {
     width: 620px;
     height: 150px;
     background-color: #f5f5f5;
     border-style: dashed;
     border-color: #ccc;
     border-width: 1px;
-    text-align: center;
-    position: relative;
-    .btn_contents{
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translateY(-50%) translateX(-50%);
-      padding: 20px;
-    }
-      .file{
-        display: none;
-      }
-      .text{
-        font-size: 12px;
-      }
   }
-}
+
+  .upload-label{
+    text-align: center;
+  }
+  .btn_contents{
+    top: 50%;
+    left: 50%;
+    padding: 40px;
+  }
+  .hidden {
+    display: none;
+  }
+  .text{
+    font-size: 12px;
+  }
+
+  #previews {
+    display: flex;
+    justify-content: left;
+  }
+  .image-preview__wapper {
+    margin-right: 5px;
+    .preview {
+      width: 120px;
+      max-height: 120px;
+    }
+    .image-preview_btn_delete {
+      background-color: #f5f5f5;
+      border-style: dashed;
+      border-color: #ccc;
+      border-width: 1px;
+      text-align: center;
+      
+    }
+  }
+
 .text_counter {
     text-align: right;
     font-size: 12px;
