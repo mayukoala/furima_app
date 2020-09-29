@@ -105,6 +105,7 @@
       text-align: center;
       display: flex;
       justify-content: center;
+
       &__blue {
         background-color: #3ccace;
         border-radius: 100px;
@@ -116,10 +117,21 @@
         cursor: pointer;
         text-align: center;
         padding: 10px;
+        color: white;
       }
 
       &__gray{
         background-color: #aaaaaa;
+        border-radius: 100px;
+        border: none;
+        font-weight: 600;
+        font-size: 20px;
+        width: 400px;
+        height: 50px;
+        cursor: pointer;
+        text-align: center;
+        padding: 10px;
+        color: white;
       }
 
       &__nologin{
