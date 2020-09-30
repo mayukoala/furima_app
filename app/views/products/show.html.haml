@@ -80,7 +80,7 @@
       - if user_signed_in? && current_user.id == @product.user_id 
         .item-buy_btn
           .item-buy_btn__blue
-            商品の編集
+            = link_to "商品の編集", edit_product_path(params[:id]), method: :get, class: "edit-btn"
         .item-buy_btn
           .item-buy_btn__gray
             = link_to "商品を削除する", product_path(params[:id]), method: :delete, class: "delete-btn"
