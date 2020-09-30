@@ -33,7 +33,7 @@ a {
   margin: 24px auto 0;
 }
 
-.from_section{
+.edit-from_section{
   height: auto;
   width: 700px;
   margin: 0 auto;
@@ -177,7 +177,7 @@ a {
 }
 
 .font_red{
-  color: #3CCACE;;
+  color: red;
 }
 
 .image_upload{
@@ -230,17 +230,45 @@ a {
 }
 
 
-
-.buttons{
-  text-align: center;
+.edit-from_section-bottom{
   font-size: 17px;
-  font-weight: bold;
-  padding: 0 150px;
-  .btn{
-    height: 45px;
+  height: auto;
+  width: 700px;
+  margin: 0 auto;
+  background-color: white;
+  padding: 40px;
+  
+  .btns{
+    text-align: center;
+    font-weight: bold;
     width: 100%;
     border: none;
     border-radius: 100px;
+    padding: 0 150px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+
+    .submit-btn{
+      margin-bottom: 15px;
+      background-color: #3CCACE;
+      color: white;
+      height: 45px;
+      width: 100%;
+      border: none;
+      border-radius: 100px;
+    }
+
+    .return-btn {
+      background-color: gray;
+      color: white;
+      height: 45px;
+      width: 100%;
+      border: none;
+      border-radius: 100px;
+      padding: 10px;
+    }
+
     &.listing{
       background-color: #3CCACE;
       color: white;
@@ -249,6 +277,7 @@ a {
       background-color: #ccc;
     }
   }
+
   .text_link {
     text-align: center;
     a {
@@ -256,15 +285,9 @@ a {
     }
   }
 
-  .return-btn {
-    background-color: #3CCACE;
-    color: white;
-    height: 45px;
-    width: 100%;
-    border: none;
-    border-radius: 100px;
-  }
+ 
 }
+
 .attention {
   font-size: 12px;
   a {
