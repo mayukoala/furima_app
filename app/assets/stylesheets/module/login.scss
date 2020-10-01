@@ -36,7 +36,7 @@
       text-align: center;
       width: 500px;
       margin: auto;
-      margin-bottom: 50px;
+      margin-bottom: 70px;
     }
     .btn-log {
       font-family: monospace;
@@ -56,27 +56,6 @@
     .pass-forgot {
     a {
       color:  #3CCACE;
-    }
-    }
-  .footer2 {
-    background-color: #272727;
-    height: 200px;
-    a {
-      text-decoration: none;
-      color: white;
-      margin: 5px;
-    }
-    &__info {
-      text-align: center;
-      text-decoration: none;
-      color: white;
-      padding-top: 30px;
-    }
-    &__logo {
-      text-align: center;
-      font-size: 15px;
-      color: white;
-      padding-top: 30px;
     }
   }
 }
