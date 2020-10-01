@@ -21,7 +21,7 @@
               = image_tag(img.image_url.url,{width:"188",height:"180"})
               .product-image__operation
                 .product-image__operation--edit__delete__hidden 削除
-          = f.fields_for :product_image do |i| 
+          = f.fields_for :product_images do |i| 
             .image_upload
               = i.label :image_url, class: 'image_upload__btn' do
                 .btn_contents
