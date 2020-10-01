@@ -1,23 +1,24 @@
-#login
-.header-login
-  = link_to image_tag("logo.png",class: "furima-logo",size:'300x100'),"/"
-.login-form__text ログイン
-= form_with model: @user, url: user_session_path, id: 'login_user', class: 'login_user', local: true do |f|
-  .field-sessions
-    .field-mail
-      .field-label
-        = f.label 'メールアドレス'
-      .field-input
-        = f.email_field :email, autofocus: true,size:"35x10"
-      %br/
-    .field-pass
-      .field-label
-        = f.label 'パスワード'
-        %i (英数字7文字以上)
-      .field-input
-        = f.password_field :password, autocomplete: "off",size:"35x10"
-    .actions
-      = f.submit "ログイン", class: 'btn-log'
-    .pass-forgot
-      = link_to "*パスワードを忘れた方はこちら"
-= render "home/footer"
+.login
+
+  = render "share/products_header"
+
+  = form_with model: @user, url: user_session_path, id: 'login_user', class: 'login_user', local: true do |f|
+    .field-sessions
+      .field-mail
+        .field-label
+          = f.label 'メールアドレス'
+        .field-input
+          = f.email_field :email, autofocus: true,size:"35x10"
+        %br/
+      .field-pass
+        .field-label
+          = f.label 'パスワード'
+          %i (英数字7文字以上)
+        .field-input
+          = f.password_field :password, autocomplete: "off",size:"35x10"
+      .actions
+        = f.submit "ログイン", class: 'btn-log'
+      .pass-forgot 
+        = link_to "*パスワードを忘れた方はこちら"
+
+    = render "share/products_footer"
