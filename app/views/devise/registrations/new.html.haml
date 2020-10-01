@@ -1,9 +1,6 @@
-
 .header
-
 .header_logo
   = link_to image_tag("logo.png",class: "furima-logo",size:'300x100'),"/"
-
 .header_text1 会員登録
 = form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f|
   = render "devise/shared/error_messages", resource: resource
@@ -13,45 +10,38 @@
       = f.label 'ニックネーム'
       %br/
       = f.text_field :nickname, autofocus: true, autocomplete: "nickname",size:"20x5"
-
     %br/
     .label-must 必須
     .field-name
       = f.label '姓'
-      = f.text_field :family_name,autofocus: true, autocomplete: "family_name",size: "12x1"
+      = f.text_field :family_name,autofocus: true, autocomplete: "family_name",size: "15x1"
       = f.label '名'
-      = f.text_field :first_name,autofocus: true, autocomplete: "first_name",size: "12x1"
-
+      = f.text_field :first_name,autofocus: true, autocomplete: "first_name",size: "15x1"
     %br/
     .label-must 必須
     .field-kana
       = f.label '姓（カナ）'
-      = f.text_field :family_name_kana,autofocus: true, autocomplete: "family_name_kana",size: "12x1"
+      = f.text_field :family_name_kana,autofocus: true, autocomplete: "family_name_kana",size: "15x1"
       = f.label '名（カナ）'
-      = f.text_field :first_name_kana,autofocus: true, autocomplete: "first_name_kana",size: "12x1"
-
+      = f.text_field :first_name_kana,autofocus: true, autocomplete: "first_name_kana",size: "15x1"
     %br/
     .label-must 必須
     .field-email
       = f.label 'メールアドレス'
       %br/
       = f.email_field :email, autofocus: true, autocomplete: "email",size:"40x5"
-
     %br/
     .label-must 必須
     .field-birth
-      = f.label '生年月日（西暦から数字8桁）'
+      = f.label '生年月日'
       %br/
-      = f.text_field :birth, autofocus: true, autocomplete: "birth",size:"20x5"
-
-
+      = f.date_select :birth,prompt:"--", use_month_numbers: true,start_year: 1950, end_year: (Time.now.year - 10)
     %br/
     .label-must 必須
     .field-password
       = f.label 'パスワード（７文字以上）'
       %br/
       = f.password_field :password, autocomplete: "new-password",size:"20x5"
-
     %br/
     .label-must 必須
     .field-pass2
@@ -60,13 +50,4 @@
       = f.password_field :password_confirmation, autocomplete: "new-password",size:"20x5"
     .actions
       = f.submit "登録" , class: "button-regi"
-
-
-.footer1
-  .footer1__info
-    = link_to 'プライバシーポリシー',''
-    = link_to 'フリマ利用規約',''
-    = link_to '特定商取引に関する表記',''
-  .footer1__logo
-    = link_to image_tag("logo-white.png", class: "furima-white-logo",size:'200x50'), root_path
-    %p © FURIMA
+= render "home/footer"
