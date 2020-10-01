@@ -56,6 +56,7 @@ class CreditCardsController < ApplicationController
   end
 
   def destroy
+    @parents = Category.where(ancestry: nil)
     if @card.blank?
       redirect_to action: "new"
     else

@@ -82,8 +82,8 @@
           .item-buy_btn__blue
             商品の編集
         .item-buy_btn
-          .item-buy_btn__gray       
-            この商品を削除する
+          .item-buy_btn__gray
+            = link_to "商品を削除する", product_path(params[:id]), method: :delete, class: "delete-btn"
       - elsif @product.order
         .item-buy_btn
           .item-buy_btn__blue
