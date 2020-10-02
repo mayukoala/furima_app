@@ -40,7 +40,7 @@ class ProductsController < ApplicationController
     @category_parent = Category.where(ancestry: nil)
     @product = Product.new(product_params)
     if @product.save
-      flash[:alert] = '出品が完了しました'
+      flash[:notice] = '出品が完了しました'
       redirect_to root_path 
    
     else

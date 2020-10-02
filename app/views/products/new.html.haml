@@ -16,16 +16,18 @@
             必須
         %p
           最大10枚までアップロードできます 
-          = f.fields_for :product_images do |i| 
-            .image_upload
-              = i.label :image_url, class: 'image_upload__btn' do
-                .btn_contents
-                  =icon('fas', 'camera fa-2x')
-                  = i.file_field :image_url, class:'file'
-                  %p.text
-                    ドラッグアンドドロップ
-                    %br
-                    またはクリックしてファイルをアップロード   
+        = f.fields_for :product_images do |i|
+          .clearfix
+            %ul#previews
+              %li.input
+                // 画像を取り込むインプットボタン
+                = i.label :image_url, class: 'upload-label' do
+                  .btn_contents
+                    =icon('fas', 'camera fa-2x')
+                    .upload-label__text
+                      クリックしてファイルをアップロード
+                  .input-area
+                    = i.file_field :image_url, class: "hidden image_upload"
       .from_section.section_line
         .labels.mb_15
           %p.label
