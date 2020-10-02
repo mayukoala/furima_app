@@ -16,23 +16,26 @@
             必須
         %p
           最大10枚までアップロードできます 
-          - @images.each do |img|
+
+          - @images.each_with_index do |img, i|
             .product-image{id:img.id}
-              = image_tag(img.image_url.url,{width:"188",height:"180"})
-              .product-image__operation
-                .product-image__operation--edit__delete__hidden 削除
-          = f.fields_for :product_images do |i| 
-            .image_upload
-              = i.label :image_url, class: 'image_upload__btn' do
-                .btn_contents
-                  =icon('fas', 'camera fa-2x')
-                  = i.file_field :image_url, class:'file', accept:"image/png, image/jpeg", data: { index: i.index } 
-                  - if @product.persisted?
-                    = i.check_box :_destroy, class: 'hidden'
-                  %p.text
-                    ドラッグアンドドロップ
-                    %br
-                    またはクリックしてファイルをアップロード   
+              - if img.persisted?
+                = image_tag(img.image_url.url,{width:"188",height:"180"})
+                .product-image__operation{data: { index: i}}
+                  .product-image__operation--edit__delete__hidden  削除
+          = f.fields_for :product_images do |i|
+            = i.file_field :image_url, class:'file', accept:"image/png, image/jpeg", data: { index: i.index } 
+            - if i.object.persisted?
+              = i.check_box :_destroy, class: 'hidden'
+          .image_upload
+            = f.label :image_url, class: 'image_upload__btn', for: "product_product_images_attributes_#{@product.product_images.count}_image_url" do
+              .btn_contents
+                =icon('fas', 'camera fa-2x')
+                %p.text
+                  ドラッグアンドドロップ
+                  %br
+                  またはクリックしてファイルをアップロード   
+                  
       .edit-from_section.section_line
         .labels.mb_15
           %p.label
