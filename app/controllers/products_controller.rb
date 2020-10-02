@@ -63,6 +63,7 @@ class ProductsController < ApplicationController
     @parents = Category.where(ancestry: nil)
     @product.build_brand
     @product.build_shipping
+    @product.product_images.new
     # データベースから親カテゴリーのみ抽出し、配列化
     @category_parent = Category.where(ancestry: nil)
     @product.product_images.new

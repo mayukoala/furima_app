@@ -58,7 +58,7 @@
         .append__category
           .labels.mb_15
             %p.label
-              カテゴリー  
+              カテゴリー
             %p.label__required
               必須  
           = f.collection_select :category_id, Category.roots, :id, :name ,{prompt: "選択してください", selected:  @product.category.parent.parent_id}, {class: 'listing-select-wrapper--edit__parent--select', id: 'parent_category_edit', name: "" }
