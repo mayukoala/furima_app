@@ -44,7 +44,6 @@ class ProductsController < ApplicationController
       redirect_to root_path 
    
     else
-      flash[:alert] = '出品に失敗しました'
       @product.product_images.new
       render :new
     end 
