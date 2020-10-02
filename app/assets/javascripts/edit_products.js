@@ -9,7 +9,7 @@ $(function(){
       dataBox.items.add(file)
       var num = $('.product-image').length + 1 + i
       var aaa = $('.product-image').length + i
-// ①
+
       var image_id = Number($('#image-box-1').attr('class'))
       var append_div_count = Number($('div[id=1]').length) 
       var noreset_id = image_id + append_div_count
@@ -22,7 +22,7 @@ $(function(){
       //読み込みが完了すると、srcにfileのURLを格納
       fileReader.onloadend = function() {
         var src = fileReader.result
-// ②
+
         var html= `<div class='product-image' data-image="${file.name}" data-index="${aaa}" id="${noreset_id-1}">
                     <div class=' product-image__content'>
                       <div class='product-image__content--icon'>
@@ -34,7 +34,7 @@ $(function(){
                     </div>
                   </div>`
         const buildFileField1 = (num)=> {
-// ③
+
           const html = `<div  class="js-file_group" data-index="${num}" id=1>
                           <input class="js-file-edit" type="file"
                           name="item[images_attributes][${append_div_count+9}][image]"
@@ -52,7 +52,6 @@ $(function(){
     });
   });
   
-// ④
   // 10枚登録されていた場合にボックスを消す
   $(document).ready(function(){
     var image_num = $('.product-image').length
@@ -60,7 +59,7 @@ $(function(){
       $('#image-box__container').css('display', 'none')
     }
   });
-// ⑤
+
   $(document).ready(function(){
     $('.js-file-edit').removeAttr('id');
     var num = $('.product-image').length - 1
@@ -77,7 +76,7 @@ $(function(){
     }
     $('#append-js-edit').append(buildFileField(num));
   });
-// ⑥
+
   $(document).on("click", '.product-image__operation--edit__delete__hidden', function(){
     //削除を押されたプレビュー要素を取得
     var target_image = $(this).parent().parent();
@@ -87,27 +86,18 @@ $(function(){
     //プレビューを削除
     target_image.remove()
     target_image_file.remove()
-    //image-box__containerクラスをもつdivタグのクラスを削除のたびに変更
-    var num = $('.product-image').length
-    $('#image-box__container').show()
-    $('#image-box__container').attr('class', `product-num-${num}`)
-  })
-// ⑦
-  $(document).on("click", '.product-image__operation--edit__delete__file', function(){
-    //削除を押されたプレビュー要素を取得
-    var target_image = $(this).parent().parent();
-    var target_id = Number($(target_image).attr('id'));
-    //削除を押されたプレビューimageのfile名を取得
-    var target_image_file = $('#append-js-edit').children('div').children('input[value="'+target_id+'"][type=file]');
-    //プレビューを削除
-    target_image.remove()
-    target_image_file.remove()
-      // フォームに割り振られた固有のインデックスを取得。
-      const targetIndex = $(this).parent().data('index')
-      // 取得したインデックスに対応するチェックボックスを取得。
-      const hiddenCheck = $(`input[data-index="${targetIndex}"].hidden`);
-      // チェックボックスが存在する場合チェックを入れる。
-      if (hiddenCheck) hiddenCheck.prop('checked', true);
+
+    // フォームに割り振られた固有のインデックスを取得。
+
+    const targetIndex = $(this).parent().data('index');
+    
+    // 取得したインデックスに対応するチェックボックスを取得。
+    //const hiddenCheck = $(`input[data-index="${targetIndex}"].hidden`);
+    const hiddenCheck = $(`#product_product_images_attributes_${targetIndex}__destroy`);
+    // チェックボックスが存在する場合チェックを入れる。
+    if (hiddenCheck) 
+    hiddenCheck.prop('checked', true);
+
     //image-box__containerクラスをもつdivタグのクラスを削除のたびに変更
     var num = $('.product-image').length
     $('#image-box__container').show()
