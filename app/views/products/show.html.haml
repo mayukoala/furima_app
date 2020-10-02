@@ -99,46 +99,46 @@
       .item-description__inner
         %p 
           = @product.text
-    .commentBox
-      .comment-body
-        %textarea
-        .noticeMsg
-          %p 
-            相手のことを考え丁寧なコメントを心がけましょう。
-            %br
-            不快な言葉遣いなどは利用制限や退会処分となることがあります。
-        .commentBtn    
-          %button{type: "submit",class: "btn"}
-            = icon('fa', 'comment',class: 'icon')
-            コメントする
-    %ul.links 
-      %li
-        = link_to "#" do
-          = icon('fa', 'angle-left',class: 'ii')
-          %span 前の商品
-      %li.links-right
-        = link_to "#" do
-          %span 後ろの商品
-          = icon('fa', 'angle-right',class: 'ii')
-    .relatedItems
-      .relatedItems-top
-        = link_to "#" do
-          商品をもっと見る
-        .productlists
-          .productlist
-            = link_to "#" do
-              = image_tag 'IMG_2653.jpg', alt: 'image-2', height: '150px', width: '220px', class: 'product-img'
-              .product-list__body
-                %h3.name
-                  財布
-                .deta-list
-                  %ul.items-price
-                    %li 
-                      1000円
-                    %li
-                      = icon('fa', 'star likeIcon',class: 'iii')
-                      0
-                  %p (税込)
+    -# .commentBox
+    -#   .comment-body
+    -#     %textarea
+    -#     .noticeMsg
+    -#       %p 
+    -#         相手のことを考え丁寧なコメントを心がけましょう。
+    -#         %br
+    -#         不快な言葉遣いなどは利用制限や退会処分となることがあります。
+    -#     .commentBtn    
+    -#       %button{type: "submit",class: "btn"}
+    -#         = icon('fa', 'comment',class: 'icon')
+    -#         コメントする
+    -# %ul.links 
+    -#   %li
+    -#     = link_to "#" do
+    -#       = icon('fa', 'angle-left',class: 'ii')
+    -#       %span 前の商品
+    -#   %li.links-right
+    -#     = link_to "#" do
+    -#       %span 後ろの商品
+    -#       = icon('fa', 'angle-right',class: 'ii')
+    -# .relatedItems
+    -#   .relatedItems-top
+    -#     = link_to "#" do
+    -#       商品をもっと見る
+    -#     .productlists
+    -#       .productlist
+    -#         = link_to "#" do
+    -#           = image_tag 'IMG_2653.jpg', alt: 'image-2', height: '150px', width: '220px', class: 'product-img'
+    -#           .product-list__body
+    -#             %h3.name
+    -#               財布
+    -#             .deta-list
+    -#               %ul.items-price
+    -#                 %li 
+    -#                   1000円
+    -#                 %li
+    -#                   = icon('fa', 'star likeIcon',class: 'iii')
+    -#                   0
+    -#               %p (税込)
   = render "home/third-banner"
   = render "home/footer"
   = render "home/camera-btn"
