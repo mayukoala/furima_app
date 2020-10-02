@@ -180,5 +180,39 @@ $(function()  {
       $('.result').html(profit);
     }
   });
+
+
+  //出品失敗時画像追加要素を一つだけに戻す
+  $(document).ready(function(){
+    var append_clearfix = $(`
+    <div class="clearfix">
+    <ul id="previews">
+    <li class="input">
+    <label class="upload-label">
+    <div class="btn_contents">
+    <i class="fas fa-camera fa-2x"></i>
+    <div class="upload-label__text">
+    クリックしてファイルをアップロード
+    </div>
+    </div>
+    <div class="input-area">
+    <input class="hidden image_upload" type="file">
+    </div>
+    </label></li>
+    </ul>
+    </div>
+    `
+    )
+
+  
+    if($(".clearfix").length >= 2){
+      $(".clearfix").remove();
+      $('.image_section').append(append_clearfix);
+    }
+    
+
+  });
+
+
 });
 
