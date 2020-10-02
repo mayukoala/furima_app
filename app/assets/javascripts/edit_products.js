@@ -113,6 +113,4 @@ $(function(){
     $('#image-box__container').show()
     $('#image-box__container').attr('class', `product-num-${num}`)
   })
-  // 価格入力時に手数料、利益計算
- 
 })
