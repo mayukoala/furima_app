@@ -82,7 +82,8 @@ $(function(){
     var target_image = $(this).parent().parent();
     //削除を押されたプレビューimageのfile名を取得
     var target_id = $(target_image).attr('id');
-    var target_image_file = $('input[value="'+target_id+'"][type=hidden]');
+    var target_image_file = $('input[value="'+target_id+'"][type=file]');
+
     //プレビューを削除
     target_image.remove()
     target_image_file.remove()
@@ -90,7 +91,8 @@ $(function(){
     // フォームに割り振られた固有のインデックスを取得。
 
     const targetIndex = $(this).parent().data('index');
-    
+
+  
     // 取得したインデックスに対応するチェックボックスを取得。
     //const hiddenCheck = $(`input[data-index="${targetIndex}"].hidden`);
     const hiddenCheck = $(`#product_product_images_attributes_${targetIndex}__destroy`);
@@ -98,7 +100,6 @@ $(function(){
     if (hiddenCheck) 
     hiddenCheck.prop('checked', true);
 
-    //image-box__containerクラスをもつdivタグのクラスを削除のたびに変更
     var num = $('.product-image').length
     $('#image-box__container').show()
     $('#image-box__container').attr('class', `product-num-${num}`)

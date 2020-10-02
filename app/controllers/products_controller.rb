@@ -68,7 +68,7 @@ class ProductsController < ApplicationController
     @product.product_images.new
   end
 
-  def update
+  def update    
     @category_parent = Category.roots
     if @product.user_id == current_user.id && @product.update(product_params)
       redirect_to root_path
