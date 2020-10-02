@@ -45,7 +45,10 @@
         margin-top: 15px;
         display: flex;
         justify-content: left;
-
+        width: 300px;
+        overflow: auto;
+        
+        
         .img_small {
           margin-right: 10px;
           height: 55px;
