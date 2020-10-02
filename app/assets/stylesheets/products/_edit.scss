@@ -236,16 +236,21 @@ a {
 
 .product-image__operation{
   width: 188px;
-    text-align: center;
-    border: 1px solid #3CCACE;
-    margin-bottom: 2px;
-    border-radius: 100px;
-    background-color: #3CCACE;
+  text-align: center;
+  border: 1px solid #3CCACE;
+  margin-bottom: 2px;
+  border-radius: 100px;
+  background-color: #3CCACE;
 
   &--edit__delete__hidden{
     color: white;
     font-weight: bold;
   }
+}
+
+
+.hidden{
+  display: none;
 }
 
 .append__category{
