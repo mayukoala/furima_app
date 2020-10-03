@@ -1,7 +1,5 @@
 .header
-.header_logo
-  = link_to image_tag("logo.png",class: "furima-logo",size:'300x100'),"/"
-.header_text1 会員登録
+  = render "share/products_header"
 = form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f|
   = render "devise/shared/error_messages", resource: resource
   .field-all
@@ -50,4 +48,4 @@
       = f.password_field :password_confirmation, autocomplete: "new-password",size:"20x5"
     .actions
       = f.submit "登録" , class: "button-regi"
-= render "home/footer"
+  = render "share/products_footer"
