@@ -59,9 +59,11 @@
               カテゴリー
             %p.label__required
               必須  
-          = f.collection_select :category_id, Category.roots, :id, :name ,{prompt: "選択してください", selected:  @product.category.parent.parent_id}, {class: 'listing-select-wrapper--edit__parent--select', id: 'parent_category_edit', name: "" }
-          = f.collection_select :category_id, @product.category.parent.parent.children, :id, :name ,{prompt: "選択してください", selected: @product.category.parent_id}, {class: 'listing-select-wrapper--edit__child--select', id: 'child_category_edit', name: "" }
-          = f.collection_select :category_id,@product.category.parent.children, :id, :name ,{prompt: "選択してください", selected: @product.category.id}, {class: 'listing-select-wrapper--edit__grandchild--select', id: 'grandchild_category_edit', name: "product[category_id]" }
+          = f.collection_select :category_id, Category.roots, :id, :name, {prompt: "選択してください", selected:  @product.category.parent.parent_id}, {class: 'listing-select-wrapper--edit__parent--select', id: 'parent__category', name: "" }
+          #children_wrapper
+            = f.collection_select :category_id, @product.category.parent.parent.children, :id, :name, {prompt: "選択してください", selected: @product.category.parent_id}, {class: 'listing-select-wrapper--edit__child--select', id: 'child__category', name: "product[category_id]" }
+          #grandchildren_wrapper
+            = f.collection_select :category_id, @product.category.parent.children, :id, :name, {prompt: "選択してください", selected: @product.category.id}, {class: 'listing-select-wrapper--edit__grandchild--select', id: 'grandchild__category', name: "product[category_id]" }
         .labels.mb_15
           %p.label
             ブランド
