@@ -138,6 +138,16 @@
 
       &__nologin{
         background-color: dimgrey;
+        border-radius: 100px;
+        border: none;
+        font-weight: 600;
+        font-size: 20px;
+        width: 400px;
+        height: 50px;
+        cursor: pointer;
+        text-align: center;
+        padding: 10px;
+        color: white;
       }
       
       a{
