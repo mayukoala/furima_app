@@ -7,13 +7,13 @@
           %h1 購入内容の確認
         %hr
         .main__box--product
-          = image_tag("dummy.jpg", alt: "product-img", class: "product-img")
+          = image_tag("#{@product.product_images[0].image_url}", alt: "product-img", class: "product-img")
           .contents
-            .content 新品未使用！GUCCIのかわいいシャツ♪夏物レディースMサイズ
+            .content #{@product.name}
             .prices
               .product-price
                 .title 商品価格
-                .price ¥9,999,999
+                .price ¥#{@product.price}
               .shipping-fee
                 .title 送料
                 .fee ¥0

@@ -66,17 +66,16 @@
               display: flex;
               justify-content: space-between;
               .title{
-                margin-left: 120px;
               }
               .price{
                 font-weight: 600;
+                margin-left: 120px;
               }
             }
             .shipping-fee{
               display: flex;
               justify-content: space-between;
               .title{
-                margin-left: 120px;
               }
               .fee{
                 font-weight: 600;
@@ -168,12 +167,21 @@
             font-size: 20px;
             width: 400px;
             height: 50px;
-            background-color: #3CCACE;
             color: white;
+            border: 1px solid ＃3CCACE;
           }
+
         }
       }
     }
   }
  
+}
+
+#payjp_checkout_box{
+  input[type="button"]{
+    background-color: #3CCACE !important;
+    background-image: linear-gradient(#3CCACE 0,#3CCACE 48%,#3CCACE 100%) !important;
+    border: 1px solid #3CCACE !important;
+  }
 }

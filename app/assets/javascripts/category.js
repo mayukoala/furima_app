@@ -31,6 +31,7 @@ $(function(){
 
   // 親カテゴリー選択後のイベント
   $('#parent__category').on('change', function(){
+
     // 親ボックスのidを取得してAjax通信でコントローラーへ送る
     var parent__category_id = document.getElementById('parent__category').value;
     if (parent__category_id != ""){
