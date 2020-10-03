@@ -12,15 +12,24 @@ $(function()  {
 
   let fileIndex = [1,2,3,4,5,6,7,8,9,10];
 
+ 
   $('.image_upload').on('change', '.file', function(e) {
     $('.image_upload').append(buildFileField(fileIndex[0]));
     fileIndex.shift();
     fileIndex.push(fileIndex[fileIndex.length - 1] + 1)
   });
 
-  $('.image_upload').on('click', '.remove_image', function() {
+  $('.remove_image').on('click',  function() {
+    console.log('test')
     $(this).parents('.image_upload__btn').remove();
-    if ($('.file').length == 0) $('.image_upload').append(buildFileField(fileIndex[0]));
+    //if ($('.file').length == 0) $('.image_upload').append(buildFileField(fileIndex[0]));
+
+
+    // checkbox check
+    let index = $(this).parents('.image').data("index")
+    console.log(index)
+    $(`#product_product_images_attributes_${index}__destroy`).prop("checked",true)
+
   });
 
   // 価格入力時に手数料、利益計算

@@ -16,16 +16,16 @@
             必須
         %p
           最大10枚までアップロードできます 
-          = f.fields_for :product_images do |i| 
-            .image_upload
-              = i.label :image_url, class: 'image_upload__btn' do
-                .btn_contents
-                  =icon('fas', 'camera fa-2x')
-                  = i.file_field :image_url, class:'file'
-                  %p.text
-                    ドラックアンドドロップ
-                    %br
-                    またはクリックしてファイルをアップロード   
+        .btn_contents.image_upload
+          -# = f.file_field :image_url, class:'file'
+        - @images.each do |image|
+          = image_tag "#{image.image_url}", class:'img_main'
+        = f.fields_for :product_images do |i|
+          .image{data: {index: i.index}}
+            = i.file_field :image_url, class:'file'
+            - if i.object.persisted?
+              = i.check_box :_destroy, class:'destroy'
+              %p.remove_image 削除
       .from_section.section_line
         .labels.mb_15
           %p.label
@@ -138,4 +138,3 @@
           %span>= link_to "加盟店規約", "#"
           に同意したことになります。
     = render "share/products_footer"
-

@@ -10,5 +10,10 @@ class Product < ApplicationRecord
   accepts_nested_attributes_for :product_images, allow_destroy: true
   validates :name, :text, :price, :product_images, presence: true
   validates_associated :product_images
-  
+  # accepts_nested_attributes_for :product_images, allow_destroy: true, reject_if: :reject_images
+
+  # def reject_images(product_images_attributes)
+  #   product_images_attributes.image_url.blank?
+  # end
+
 end
