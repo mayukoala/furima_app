@@ -6,9 +6,6 @@
       .main_details
         .main_details__message
           購入が完了しました。
-      //商品の表示を部分テンプレートで共通化
-      //今回の実装にはあまり関係ないので省略
-      //= render "purchases/shared/purchase_product_info.html.haml", product: @product, images: @images
       %ul.purchased__links
         %li.purchased__links__TopPage
           = link_to "トップページに戻る", root_path, class: "purchased__links__TopPage__btn"
